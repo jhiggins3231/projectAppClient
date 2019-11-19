@@ -1,0 +1,22 @@
+<mat-toolbar style="background-color: black; color: whitesmoke;">
+        <mat-toolbar-row>
+        <span class="title">!!%)</span>
+            <button mat-button style="left: 90%;">About</button>
+            <button mat-button style="left: 80%;">Contact</button>
+            <button mat-icon-button style="left: 85%;" [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Gallery</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>library_add</mat-icon>
+            <span>Add Project</span>
+          </button>
+        </mat-menu>
+         </mat-toolbar-row>
+         </mat-toolbar>
+         
+         <h1 style="color: white;">user works!</h1>
