@@ -1,0 +1,89 @@
+
+<mat-toolbar style="background-color: black; color: whitesmoke;">
+    <mat-toolbar-row>
+    <span class="title">!!%)</span>
+        <button mat-button style="left: 90%;">About</button>
+        <button mat-button style="left: 80%;">Contact</button>
+        <button mat-icon-button style="left: 85%;" [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Gallery</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>library_add</mat-icon>
+        <span>Add Project</span>
+      </button>
+    </mat-menu>
+     </mat-toolbar-row>
+     </mat-toolbar>
+     <mat-grid-list cols="2" rowHeight="1:1">
+       <mat-grid-tile>
+     <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="example-form">
+          <table class="example-full-width" cellspacing="0">
+            <br />
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width" style="color: black;">
+                <input matInput placeholder="Username" [(ngModel)]="username" name="username" required style="color: black;">
+                </mat-form-field>
+              </td>
+            </tr>
+            <br />
+            <br />
+            <tr>
+            <td><mat-form-field class="example-full-width" style="color: black;">
+              <input matInput placeholder="Password" [(ngModel)]="password"type="password" name="password" required style="color: black;">
+            </mat-form-field></td>
+          </tr></table>
+        </form>
+        <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button (click)="login()" color="primary">Login</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Signup</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="example-form">
+          <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width" style="color: black;">
+                <input matInput placeholder="Username" [(ngModel)]="usernameSignup" name="usernameSignup" required style="color: black;">
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                  <mat-form-field class="example-full-width" style="color: black;">
+                  <input matInput placeholder="Email" [(ngModel)]="email" name="email" required style="color: black;">
+                  </mat-form-field>
+                </td>
+              </tr>
+            <tr>
+            <td><mat-form-field class="example-full-width" style="color: black;">
+              <input matInput placeholder="Password" [(ngModel)]="passwordSignup"type="password" name="passwordSignup" required style="color: black;">
+            </mat-form-field></td>
+          </tr></table>
+        </form>
+        <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button (click)="login()" color="primary">Signup</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  </mat-grid-list>
