@@ -35,6 +35,8 @@ export class ProjectComponent implements OnInit{
     .subscribe()
     alert(`${this.projectName.value} was added to the database!`) 
     }
+
+    
     getByBadge(byBadge: string) {
       this.projectService.getByBadge(this.byBadge.value).subscribe()
     }

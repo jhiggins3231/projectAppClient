@@ -20,7 +20,7 @@ export class AuthenticationService {
         return this.http.post<User>(`${APIURL}/auth/signup`, {username: username, email: email, password: password})
     }
     signin(username: string, password: string) {
-        return this.http.post<User>(`${APIURL}/auth/signin`, { username: username, password: password})
+        return this.http.post<User>(`${APIURL}/auth/login`, { username: username, password: password})
     }
     update(username: string, email: string, id) {
         const user = {
