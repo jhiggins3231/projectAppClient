@@ -1,0 +1,23 @@
+.title {
+    font-family: Lobster;
+    text-align: center;
+    font-size: 5em;
+}
+
+.card {
+    width: 30vw;
+    border: 2px solid red;
+}
+.links {
+    font-family: Volk;
+    text-decoration: underline;
+    cursor: pointer;
+}
+@font-face {
+    font-family: Lobster;
+    src: url('/assets/Lobster-Regular.ttf')
+}
+@font-face {
+    font-family: Volk;
+    src: url('/assets/Vollkorn-Black.ttf');
+}
