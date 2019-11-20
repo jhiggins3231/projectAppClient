@@ -23,7 +23,7 @@ export class ProjectService {
     }
 
     add(projectName: string, description: string, location: string, badge: string){
-        return this.http.post<Projects>(`${APIURL}/projects/`, {projectName: projectName, description: description, location: location, badge: badge}, httpOptions)
+        return this.http.post<Projects>(`${APIURL}/projects/post`, {projectName: projectName, description: description, location: location, badge: badge}, httpOptions)
     }
     getByBadge(byBadge: string){
         return this.http.get(`${APIURL}/projects/${byBadge}`, httpOptions)
