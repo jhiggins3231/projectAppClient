@@ -14,6 +14,9 @@ const httpOptions = {
 })
 
 export class ProjectService {
+
+
+
     constructor(public http: HttpClient) {
         let headers: HttpHeaders = new HttpHeaders();
         headers = headers.append('Content-Type', 'application/json');
@@ -21,5 +24,8 @@ export class ProjectService {
 
     add(projectName: string, description: string, location: string, badge: string){
         return this.http.post<Projects>(`${APIURL}/projects/`, {projectName: projectName, description: description, location: location, badge: badge}, httpOptions)
+    }
+    getByBadge(byBadge: string){
+        return this.http.get(`${APIURL}/projects/${byBadge}`, httpOptions)
     }
 }
