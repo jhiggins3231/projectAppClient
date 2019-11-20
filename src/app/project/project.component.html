@@ -1,0 +1,33 @@
+<body style="background: url(../assets/abstract.jpeg); width: 100vw; height: 100vh; background-size: cover;">
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<h1 class="title">Projects</h1>
+<br /><br /><br />
+<br /><br /><br />
+
+<div class="example-container">
+    <mat-form-field class="input">
+          <input matInput placeholder="Project Name" [formControl]="projectName" class="place">
+        </mat-form-field>
+      
+        <mat-form-field class="input">
+          <textarea matInput placeholder="Brief Description" [formControl]="description" class="place"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="input">
+                <textarea matInput placeholder="Link to Project" [formControl]="location" class="place"></textarea>
+              </mat-form-field>
+              <mat-form-field>
+              <mat-select required class="input" placeholder="Badge" [formControl]="badge">
+                    <mat-option value="Gold">Gold</mat-option>
+                    <mat-option value="Blue">Blue</mat-option>
+                    <mat-option value="Red">Red</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <button mat-raised-button (click)='addProjects()'>Add</button>
+      </div>
+
+      <input [formControl]='byBadge'>
+      <button (click)='getByBadge()'>Search</button>
+    
+</body>

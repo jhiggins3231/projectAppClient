@@ -1,0 +1,33 @@
+.title {
+    font-family: Lobster;
+    text-align: center;
+    font-size: 5em;
+    color: whitesmoke;
+}
+.example-container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    border: 2px solid rgb(58, 0, 97);
+    background-color: whitesmoke;
+    border-radius: 10px;
+  }
+  .example-container > * {
+    width: 100%;
+    /* border: 2px solid white; */
+  }
+  
+  .example-container form {
+    margin-bottom: 20px;
+  }
+  
+  .example-container form > * {
+    margin: 5px 0;
+  }
+.input {
+    
+    color: rgb(58, 0, 97);
+}
+.place {
+    color: rgb(58, 0, 97);
+}

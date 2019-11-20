@@ -47,6 +47,9 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +58,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     UserComponent,
     HomeComponent,
     NavbarComponent,
+    AboutComponent,
+    ContactComponent,
+    ProjectComponent,
   ],
   imports: [
     BrowserModule,
