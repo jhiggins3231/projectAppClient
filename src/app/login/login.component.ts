@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     }
 
     login() {
-      
+      console.log(this.username.value)
       this.auth.signin(this.username.value, this.password.value)
       .subscribe(user => {
         sessionStorage.setItem('token', user.sessionToken)
