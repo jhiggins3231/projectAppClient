@@ -1,0 +1,12 @@
+.tabs{
+    position: absolute;
+    left: 25%;
+    background-color:  rgba(117, 117, 117, 0.74);
+    color: whitesmoke;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+.label {
+    background-color: red;
+  }
