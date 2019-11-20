@@ -1,0 +1,13 @@
+.title {
+    font-family: Lobster;
+    text-align: center;
+    font-size: 5em;
+}
+@font-face {
+    font-family: Lobster;
+    src: url('/assets/Lobster-Regular.ttf')
+}
+@font-face {
+    font-family: Volk;
+    src: url('/assets/Vollkorn-Black.ttf');
+}

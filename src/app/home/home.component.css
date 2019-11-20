@@ -1,12 +1,28 @@
 .tabs{
     position: absolute;
     left: 25%;
-    background-color:  rgba(117, 117, 117, 0.74);
+    background-color:  whitesmoke;
+    border: 3px solid black;
     color: whitesmoke;
     font-size: 20px;
     text-align: center;
     border-radius: 5px;
 }
 .label {
+    font-family: Volk;
     background-color: red;
   }
+.listItem {
+    font-family: Volk;
+    font-size: 18px;
+    color: black;
+}
+.projectInfo {
+    font-family: Volk;
+    font-size: 18px;
+    color: black;
+}
+@font-face {
+    font-family: Volk;
+    src: url('/assets/Vollkorn-Black.ttf');
+}
