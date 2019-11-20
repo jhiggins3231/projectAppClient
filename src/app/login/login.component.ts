@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-
-import {Router} from '@angular/router';
-import {MatDialog} from '@angular/material'
+import { AuthenticationService } from '../../app/_services/authentication.service'
+import { FormControl } from '@angular/forms';
+import { getMatScrollStrategyAlreadyAttachedError } from '@angular/cdk/overlay/typings/scroll/scroll-strategy';
 
 @Component({
   selector: 'app-login',
@@ -11,20 +10,54 @@ import {MatDialog} from '@angular/material'
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  username = new FormControl('')
+  password = new FormControl('')
+  email = new FormControl('')
+  usernameS = new FormControl('')
+  passwordS = new FormControl('')
 
-  username: string;
-  password: string;
+  constructor(private auth: AuthenticationService) {}
 
-    ngOnInit() {
+
+    ngOnInit() { 
     }
 
-    login() : void {
-      if(this.username == 'admin' && this.password == 'admin'){
-       this.router.navigate(["user"]);
-      }else {
-        alert("Invalid credentials");
-      }
+    login() {
+      
+      this.auth.signin(this.username.value, this.password.value)
+      .subscribe(user => {
+        sessionStorage.setItem('token', user.sessionToken)
+        sessionStorage.setItem('admin', user.user.admin)
+        alert(user.message)
+        window.location.href = '/home'
+      },
+      err => {
+        alert(err.error.message)
+      })
     }
+    signUp() {
+      if(this.passwordS.value.length >= 5 && this.passwordS.value.length <= 20) {
+        this.auth.signUp(this.usernameS.value, this.email.value, this.passwordS.value)
+        .subscribe(user => {
+          sessionStorage.setItem('token', user.sessionToken)
+          alert(user.message)
+          window.location.href = '/home'
+        },
+        err => {
+          if(err.error.fields.usernameS === this.usernameS.value) {
+            alert('Username not available')
+          } else {
+            if(err.error.fields.email === this.email.value) {
+              alert('This email already exist')
+            }
+          }
+        })
+    } else {
+      alert('Password must be between 5 and 20 characters')
     }
-  
+  }
+  logout() {
+    sessionStorage.removeItem('token')
+    window.location.href = '/login'
+  }
+}
