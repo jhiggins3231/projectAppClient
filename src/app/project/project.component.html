@@ -26,4 +26,8 @@
                 </mat-form-field>
                 <button mat-raised-button (click)='addProjects()'>Add</button>
       </div>
+
+      <input [formControl]='byBadge'>
+      <button (click)='getByBadge()'>Search</button>
+    
 </body>
