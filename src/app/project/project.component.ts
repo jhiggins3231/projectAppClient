@@ -20,6 +20,7 @@ export class ProjectComponent implements OnInit{
   token = sessionStorage.getItem('token')
 
   responseProjects: any = [];
+  responseProjectsAll: any = [];
 
 
   constructor(public projectService: ProjectService) {}
@@ -35,12 +36,21 @@ export class ProjectComponent implements OnInit{
     (this.projectName.value, this.description.value, this.location.value, this.badge.value)
     .subscribe()
     alert(`${this.projectName.value} was added to the database!`) 
-    }
-    getByBadge(byBadge: string) {
-      console.log(this.byBadge.value)
-      this.projectService.getByBadge(this.byBadge.value).subscribe( (results) => {
-        this.responseProjects = results
-        console.log(results)
-      })
-    }
+    };
+
+  getByBadge(byBadge: string) {
+    console.log(this.byBadge.value)
+    this.projectService.getByBadge(this.byBadge.value).subscribe( (results) => {
+      this.responseProjects = results
+      console.log(results)
+    })
+  };
+
+  viewAll() {
+    this.projectService.getAll().subscribe( (results) => {
+      this.responseProjectsAll = results
+      console.log(results)
+    })
+  }
+ 
 }
