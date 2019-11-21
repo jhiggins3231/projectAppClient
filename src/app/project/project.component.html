@@ -37,22 +37,30 @@
     <button class="searchButton" (click)='getByBadge()'>Search</button>
     <perfect-scrollbar style="max-width: 600px; max-height: 300px;" [config]="config">
     <table mat-table [dataSource]="dataSource" class="tableData">
+
+
+
+      
             <ng-container matColumnDef="Project Name">
               <th mat-header-cell *matHeaderCellDef>Project Name</th>
               <td mat-cell *matCellDef="let proj">{{proj.projectName}}</td>
             </ng-container>
+
             <ng-container matColumnDef="Description">
               <th mat-header-cell *matHeaderCellDef>Description</th>
               <td mat-cell *matCellDef="let proj">{{proj.description}}</td>
             </ng-container>
+
             <ng-container matColumnDef="Location">
               <th mat-header-cell *matHeaderCellDef>Location</th>
               <td mat-cell *matCellDef="let proj">{{proj.location}}</td>
             </ng-container>
+
             <ng-container matColumnDef="Badge">
               <th mat-header-cell *matHeaderCellDef>Badge</th>
               <td mat-cell *matCellDef="let proj">{{proj.badge}}</td>
             </ng-container>
+
             <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             
