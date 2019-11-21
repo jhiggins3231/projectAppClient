@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 
 
@@ -12,6 +15,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 
 
 //Angular Material Components
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {CdkTableModule} from '@angular/cdk/table';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCheckboxModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material';
@@ -52,6 +57,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectComponent } from './project/project.component';
 import { GalleryComponent } from './gallery/gallery.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +72,8 @@ import { GalleryComponent } from './gallery/gallery.component';
   ],
   imports: [
     BrowserModule,
+    PerfectScrollbarModule,
+    CdkTableModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CustomMaterialModule,
@@ -103,6 +111,7 @@ import { GalleryComponent } from './gallery/gallery.component';
     MatPaginatorModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ScrollingModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: function tokenGetter() {
@@ -112,7 +121,10 @@ import { GalleryComponent } from './gallery/gallery.component';
         }
     })
   ],
-  providers: [],
+  providers: [{
+    provide: PERFECT_SCROLLBAR_CONFIG,
+    useValue: PERFECT_SCROLLBAR_CONFIG
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

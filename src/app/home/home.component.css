@@ -26,6 +26,7 @@
     color: black;
     margin: 10px;
     padding: 10px;
+    line-height: 46pt;
 }
 @font-face {
     font-family: Volk;
