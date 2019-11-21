@@ -29,7 +29,7 @@
 
       <input [formControl]='byBadge'>
       <div class='resultsContainer' stlye='display: inline;'>
-        <div class='badgeResults' style='display: inline'>
+        <div class='badgeResults'>
             <button (click)='getByBadge()'>Search</button>
             <ul *ngFor='let responseProject of responseProjects'>
               <li style='color: white;'>Name: {{ responseProject.projectName }}</li>
@@ -37,16 +37,20 @@
             </ul>
         </div>
         
-        <div class='allResults' style='display: inline'>
+        <div class='allResults'>
             <button (click)='viewAll()'>View All</button>
-            <ul *ngFor='let project of responseProjectsAll'>
-              <li style='color: red;'>Name: {{ project.projectName }}</li>
-              <li style='color: red;'>Location: {{ project.location }}</li>
-              <ul *ngFor='let comment of project.comments'>
-                <li style='color: red;'>Username: {{ project.comments[0].commenter_username }}</li>
-                <li style='color: red;'>Comment: {{ project.comments[0].content }}</li>
-              </ul>
-            </ul>
+            <table>
+              <tr *ngFor='let project of responseProjectsAll'>
+                  <td style='color: red;'>Name: {{ project.projectName }}</td>
+                  <td style='color: red;'>Location: {{ project.location }}</td>
+                  <td style='color: red;'>ID: {{ project.id }}</td> 
+                  <ul *ngFor='let comment of project.comments'>
+                    <li style='color: red;'>Username: {{ comment.commenter_username }}: {{ comment.content }}</li>
+                  </ul>  
+                    <button (click)='deleteProject(this.project.id)'>Delete Project</button>
+                    <button>Edit Project</button> 
+              </tr>
+            </table>
         </div>
       </div>
     

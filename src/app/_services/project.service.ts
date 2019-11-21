@@ -30,8 +30,12 @@ export class ProjectService {
     }
 
     getAll(){
-        let url = `${APIURL}/projects/view`
-        console.log(url)
         return this.http.get(`${APIURL}/projects/view`, httpOptions)
+    }
+
+    deleteProject(deleteId: string){
+        let url = `${APIURL}/projects/remove/${deleteId}`
+        console.log(url)
+        return this.http.delete(`${APIURL}/projects/remove/${deleteId}`, httpOptions)
     }
 }

@@ -21,6 +21,7 @@ export class ProjectComponent implements OnInit{
 
   responseProjects: any = [];
   responseProjectsAll: any = [];
+  deleteId: any = [];
 
 
   constructor(public projectService: ProjectService) {}
@@ -35,7 +36,8 @@ export class ProjectComponent implements OnInit{
     this.projectService.add
     (this.projectName.value, this.description.value, this.location.value, this.badge.value)
     .subscribe()
-    alert(`${this.projectName.value} was added to the database!`) 
+    alert(`${this.projectName.value} was added to the database!`)
+    this.viewAll() 
     };
 
   getByBadge(byBadge: string) {
@@ -51,6 +53,11 @@ export class ProjectComponent implements OnInit{
       this.responseProjectsAll = results
       console.log(results)
     })
+  }
+
+  deleteProject(deleteId: string){
+    this.projectService.deleteProject(deleteId).subscribe()
+    this.viewAll();
   }
  
 }
