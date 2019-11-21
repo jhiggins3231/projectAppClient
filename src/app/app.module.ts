@@ -50,6 +50,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectComponent } from './project/project.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { ProjectComponent } from './project/project.component';
     AboutComponent,
     ContactComponent,
     ProjectComponent,
+    GalleryComponent,
   ],
   imports: [
     BrowserModule,
