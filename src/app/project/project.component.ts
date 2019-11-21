@@ -19,6 +19,7 @@ export class ProjectComponent implements OnInit{
   byBadge = new FormControl('')
   token = sessionStorage.getItem('token')
 
+  responseProjects: any = [];
 
 
   constructor(public projectService: ProjectService) {}
@@ -36,6 +37,10 @@ export class ProjectComponent implements OnInit{
     alert(`${this.projectName.value} was added to the database!`) 
     }
     getByBadge(byBadge: string) {
-      this.projectService.getByBadge(this.byBadge.value).subscribe()
+      console.log(this.byBadge.value)
+      this.projectService.getByBadge(this.byBadge.value).subscribe( (results) => {
+        this.responseProjects = results
+        console.log(results)
+      })
     }
 }
