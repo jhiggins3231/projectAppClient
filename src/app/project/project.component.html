@@ -29,5 +29,9 @@
 
       <input [formControl]='byBadge'>
       <button (click)='getByBadge()'>Search</button>
+      <ul *ngFor='let responseProject of responseProjects'>
+          <li style='color: white;'>Name: {{ responseProject.projectName }}</li>
+          <li style='color: white;'>Location: {{ responseProject.location }}</li>
+      </ul>
     
 </body>
