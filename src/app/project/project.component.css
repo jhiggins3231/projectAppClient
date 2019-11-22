@@ -1,33 +1,38 @@
 .title {
-    font-family: Lobster;
-    text-align: center;
-    font-size: 5em;
-    color: whitesmoke;
+  font-family: Lobster;
+  text-align: center;
+  font-size: 5em;
+  color: whitesmoke;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
 }
 .example-container {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    border: 2px solid rgb(58, 0, 97);
-    background-color: whitesmoke;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  border: 2px solid rgb(58, 0, 97);
+  background-color: whitesmoke;
+  border-radius: 10px;
   }
-  .example-container > * {
-    width: 100%;
-    /* border: 2px solid white; */
-  }
-  
-  .example-container form {
-    margin-bottom: 20px;
-  }
-  
-  .example-container form > * {
-    margin: 5px 0;
-  }
-.input {
-    
-    color: rgb(58, 0, 97);
+.example-container1 {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  border: 2px solid rgb(58, 0, 97);
+  background-color: whitesmoke;
+  border-radius: 10px;
 }
-.place {
-    color: rgb(58, 0, 97);
+
+.input {
+  color: rgb(58, 0, 97);
+  display: flex;
+}
+.searchBadge {
+  border: 1px solid purple;
+  border-radius: 5px;
+}
+.searchButton {
+  display: flex;
+}
+.tableData {
+  width: 600px;
 }
