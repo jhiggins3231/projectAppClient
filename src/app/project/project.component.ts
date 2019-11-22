@@ -25,6 +25,8 @@ export class ProjectComponent implements OnInit{
   public type: string = 'component';
 
   public disabled: boolean = false;
+  responseProjects: any = [];
+
 
   public config: PerfectScrollbarConfigInterface = {};
 
