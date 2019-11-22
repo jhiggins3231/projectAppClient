@@ -2,13 +2,10 @@
     font-family: Lobster;
     text-align: center;
     font-size: 5em;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
+    color: whitesmoke;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.479);
 }
 @font-face {
     font-family: Lobster;
     src: url('/assets/Lobster-Regular.ttf')
-}
-@font-face {
-    font-family: Volk;
-    src: url('/assets/Vollkorn-Black.ttf');
 }

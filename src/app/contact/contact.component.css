@@ -2,16 +2,22 @@
     font-family: Lobster;
     text-align: center;
     font-size: 5em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
 }
 
 .card {
-    width: 30vw;
+    width: 450px;
+    height: 200px;
     border: 2px solid red;
+    box-shadow: 10px 15px 5px rgba(0, 0, 0, 0.692);
 }
 .links {
     font-family: Volk;
     text-decoration: underline;
     cursor: pointer;
+}
+mat-card-title {
+    font-family: Lobster;
 }
 @font-face {
     font-family: Lobster;

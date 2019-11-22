@@ -3,7 +3,7 @@ export const environment = {
 };
 
 export let APIURL = 'http://localhost:3000/';
-
+ 
 switch (window.location.hostname) {
   case 'localhost:3000':
     APIURL = 'http://localhost:3000'

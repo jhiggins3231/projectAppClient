@@ -7,6 +7,8 @@
     font-size: 20px;
     text-align: center;
     border-radius: 5px;
+    height: 50vh;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
 }
 .label {
     font-family: Volk;
@@ -16,11 +18,15 @@
     font-family: Volk;
     font-size: 18px;
     color: black;
+    margin-top: 25px;    
 }
 .projectInfo {
     font-family: Volk;
     font-size: 18px;
     color: black;
+    margin: 10px;
+    padding: 10px;
+    line-height: 46pt;
 }
 @font-face {
     font-family: Volk;

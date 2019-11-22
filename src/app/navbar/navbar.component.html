@@ -1,24 +1,24 @@
-<mat-toolbar style="background-color: black; color: whitesmoke;">
+<mat-toolbar style="background-color: black; color: whitesmoke; background-image: url('../assets/logoPNG.png'); background-repeat: no-repeat; background-size: 210px; background-position: center;">
         <mat-toolbar-row>
-        <span class="title">!!%)</span>
+            <button mat-button routerLink='/login' style="left: 0%;" >Login</button> 
             <button mat-button routerLink='/about' style="left: 90%;" >About</button>
             <button mat-button routerLink='/contact' style="left: 80%;">Contact</button>
             <button mat-icon-button style="left: 85%;" [matMenuTriggerFor]="menu">
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>
-            <mat-icon>dialpad</mat-icon>
-            <span>Gallery</span>
-          </button>
-          <button mat-menu-item routerLink="/projects">
-            <mat-icon>library_add</mat-icon>
-            <span>Add Project</span>
-          </button>
           <button mat-menu-item routerLink="/home">
             <mat-icon>home</mat-icon>
             <span>Home</span>
         </button>
+        <button mat-menu-item routerLink="/projects">
+          <mat-icon>library_add</mat-icon>
+          <span>Add/View</span>
+        </button>
+          <button mat-menu-item routerLink="/gallery">
+            <mat-icon>dialpad</mat-icon>
+            <span>Gallery</span>
+          </button>
         <button mat-menu-item (click)='logout()'>
                 <mat-icon>exit_to_app</mat-icon>
                 <span>Logout</span>
