@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProjectService } from '../_services/project.service';
 import { FormControl } from '@angular/forms';
-// import { PerfectScrollbarConfigInterface,
-//   PerfectScrollbarComponent, PerfectScrollbarDirective } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface,
+  PerfectScrollbarComponent, PerfectScrollbarDirective } from 'ngx-perfect-scrollbar';
 
 
 @Component({
@@ -22,14 +22,16 @@ export class ProjectComponent implements OnInit{
   byBadge = new FormControl('')
   token = sessionStorage.getItem('token')
   dataSource: any = [];
+
+  deleteId: string = '';
   public type: string = 'component';
 
   public disabled: boolean = false;
 
-  // public config: PerfectScrollbarConfigInterface = {};
+  public config: PerfectScrollbarConfigInterface = {};
 
-  // @ViewChild(PerfectScrollbarComponent, { static: false }) componentRef?: PerfectScrollbarComponent;
-  // @ViewChild(PerfectScrollbarDirective, { static: false }) directiveRef?: PerfectScrollbarDirective;
+  @ViewChild(PerfectScrollbarComponent, { static: false }) componentRef?: PerfectScrollbarComponent;
+  @ViewChild(PerfectScrollbarDirective, { static: false }) directiveRef?: PerfectScrollbarDirective;
 
 constructor(public projectService: ProjectService) {}
 
@@ -47,18 +49,23 @@ addProjects(projectName: string, description: string, location: string, badge: s
     }
 
     
-    getByBadge(byBadge: string) {
-      this.projectService.getByBadge(this.byBadge.value).subscribe(res => 
-        {
-          this.dataSource = res;
-          console.log(this.dataSource)
-        })
-    }
-    getByBadge1(badge: string) {
-      this.projectService.getByBadge(this.badge.value).subscribe(res => 
-        {
-          this.dataSource = res;
-          console.log(this.dataSource)
-        })
-    }
+getByBadge(byBadge: string) {
+  this.projectService.getByBadge(this.byBadge.value).subscribe(res => 
+    {
+      this.dataSource = res;
+      console.log(this.dataSource)
+    })
+}
+getByBadge1(badge: string) {
+  this.projectService.getByBadge(this.badge.value).subscribe(res => 
+    {
+      this.dataSource = res;
+      console.log(this.dataSource)
+    })
+}
+
+deleteProject(deleteId: string){
+  console.log(deleteId)
+  this.projectService.deleteProject(deleteId).subscribe()
+}
 }
