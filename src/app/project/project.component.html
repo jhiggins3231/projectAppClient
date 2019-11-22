@@ -68,19 +68,24 @@
                   
                   <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
                   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                 
                   
-                </table>
+                  
+                </table>   
               </perfect-scrollbar>
             </div>
           </mat-grid-tile>
         </mat-grid-list>
       </body>
-                <mat-menu #menu1="matMenu">
-                    <button mat-menu-item routerLink="/projects">
-                      <mat-icon>delete</mat-icon>
-                      <span>Delete</span>
-                  </button>
-                  <button mat-menu-item routerLink="/projects">
-                    <mat-icon>update</mat-icon>
-                    <span>Update</span>
-                  </button>
+      
+        <mat-menu #menu1="matMenu">
+          <div *ngFor='let proj of dataSource'>
+              <button (click)='deleteProject()' mat-menu-item routerLink="/projects">
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+            </button>
+            <button mat-menu-item routerLink="/projects">
+              <mat-icon>update</mat-icon>
+              <span>Update</span>
+            </button>
+          </div>

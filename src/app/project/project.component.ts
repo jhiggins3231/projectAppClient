@@ -22,9 +22,13 @@ export class ProjectComponent implements OnInit{
   byBadge = new FormControl('')
   token = sessionStorage.getItem('token')
   dataSource: any = [];
+
+  deleteId: string = '';
   public type: string = 'component';
 
   public disabled: boolean = false;
+  responseProjects: any = [];
+
 
   public config: PerfectScrollbarConfigInterface = {};
 
@@ -47,18 +51,23 @@ addProjects(projectName: string, description: string, location: string, badge: s
     }
 
     
-    getByBadge(byBadge: string) {
-      this.projectService.getByBadge(this.byBadge.value).subscribe(res => 
-        {
-          this.dataSource = res;
-          console.log(this.dataSource)
-        })
-    }
-    getByBadge1(badge: string) {
-      this.projectService.getByBadge(this.badge.value).subscribe(res => 
-        {
-          this.dataSource = res;
-          console.log(this.dataSource)
-        })
-    }
+getByBadge(byBadge: string) {
+  this.projectService.getByBadge(this.byBadge.value).subscribe(res => 
+    {
+      this.dataSource = res;
+      console.log(this.dataSource)
+    })
+}
+getByBadge1(badge: string) {
+  this.projectService.getByBadge(this.badge.value).subscribe(res => 
+    {
+      this.dataSource = res;
+      console.log(this.dataSource)
+    })
+}
+
+deleteProject(deleteId: string){
+  console.log(deleteId)
+  this.projectService.deleteProject(deleteId).subscribe()
+}
 }
