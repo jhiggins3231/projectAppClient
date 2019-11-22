@@ -14,7 +14,7 @@ import { PerfectScrollbarConfigInterface,
 
 export class ProjectComponent implements OnInit{
   displayedColumns: string[]=
-      ['Project Name', 'Description', 'Location', 'Badge'];
+      ['Project Name', 'Description', 'Location', 'Badge', 'star'];
   projectName = new FormControl('')
   description = new FormControl('')
   location = new FormControl('')
