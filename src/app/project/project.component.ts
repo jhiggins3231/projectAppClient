@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { ProjectService } from '../_services/project.service';
 import { FormControl } from '@angular/forms';
 import { PerfectScrollbarConfigInterface,
   PerfectScrollbarComponent, PerfectScrollbarDirective } from 'ngx-perfect-scrollbar';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -35,7 +36,7 @@ export class ProjectComponent implements OnInit{
   @ViewChild(PerfectScrollbarComponent, { static: false }) componentRef?: PerfectScrollbarComponent;
   @ViewChild(PerfectScrollbarDirective, { static: false }) directiveRef?: PerfectScrollbarDirective;
 
-constructor(public projectService: ProjectService) {}
+constructor(public projectService: ProjectService, private router: Router) {}
 
 ngOnInit() {
   
@@ -69,5 +70,5 @@ getByBadge1(badge: string) {
 deleteProject(deleteId: string){
   console.log(deleteId)
   this.projectService.deleteProject(deleteId).subscribe()
-}
+};
 }
