@@ -56,6 +56,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectComponent } from './project/project.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { EditComponent } from './project/edit/edit.component';
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { GalleryComponent } from './gallery/gallery.component';
     ContactComponent,
     ProjectComponent,
     GalleryComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,

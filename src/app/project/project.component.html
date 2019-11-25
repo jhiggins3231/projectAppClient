@@ -76,6 +76,8 @@
             </div>
           </mat-grid-tile>
         </mat-grid-list>
+        <hr>
+        <app-edit></app-edit>
       </body>
       
         <mat-menu #menu1="matMenu">
@@ -84,8 +86,10 @@
                 <mat-icon>delete</mat-icon>
                 <span>Delete</span>
             </button>
-            <button mat-menu-item routerLink="/projects">
-              <mat-icon>update</mat-icon>
-              <span>Update</span>
-            </button>
+            <a routerLink="/edit" [state]='{id: proj.id, name: proj.projectName, description: proj.description, location: proj.location, badge: proj.badge}'>
+              <button mat-menu-item>
+                <mat-icon>update</mat-icon>
+                <span>Update</span>
+              </button>
+            </a>
           </div>

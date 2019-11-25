@@ -38,4 +38,10 @@ export class ProjectService {
         console.log(url)
         return this.http.delete(`${APIURL}/projects/remove/${deleteId}`, httpOptions)
     }
+
+    editProject(editId: string, newProjectName: string, newDescription: string, newLocation: string, newBadge: string){
+        let url = `${APIURL}/projects/edit/${editId}`
+        console.log(url)
+        return this.http.put(url, {projectName: newProjectName, description: newDescription, location: newLocation, badge: newBadge }, httpOptions)
+    }
 }
