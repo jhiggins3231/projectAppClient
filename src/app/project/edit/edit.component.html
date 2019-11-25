@@ -5,16 +5,16 @@
     <mat-grid-tile class="example-container">
 <div>
     <mat-form-field class="input">
-          <input matInput placeholder="Project Name" [formControl]="newProjectName" class="place" [value]='name' required>
+          <input matInput placeholder="Project Name" [formControl]="newProjectName" class="place" [ngModel]='name' required>
     </mat-form-field>
     <mat-form-field class="input">
-          <input matInput placeholder="Brief Description" [formControl]="newDescription" class="place" [value]='description' required>
+          <input matInput placeholder="Brief Description" [formControl]="newDescription" class="place" [ngModel]='description' required>
     </mat-form-field>
     <mat-form-field class="input">
-          <input matInput placeholder="Link to Project" [formControl]="newLocation" class="place" [value]='location' required>
+          <input matInput placeholder="Link to Project" [formControl]="newLocation" class="place" [ngModel]='location' required>
     </mat-form-field>
     <mat-form-field>
-    <mat-select required class="select" placeholder="Badge" [formControl]="newBadge" [value]='badge' required>
+    <mat-select required class="select" placeholder="Badge" [formControl]="newBadge" [ngModel]='badge' required>
           <mat-option value="Gold">Gold</mat-option>
           <mat-option value="Blue">Blue</mat-option>
           <mat-option value="Red">Red</mat-option>
