@@ -4,7 +4,8 @@ import { FormControl } from '@angular/forms';
 import { PerfectScrollbarConfigInterface,
   PerfectScrollbarComponent, PerfectScrollbarDirective } from 'ngx-perfect-scrollbar';
 import { Router } from '@angular/router';
-
+import {MatDialog, MatDialogConfig, MatTable} from "@angular/material";
+import { DialogComponent } from './dialog/dialog.component';
 
 @Component({
   selector: 'app-project',
@@ -13,33 +14,45 @@ import { Router } from '@angular/router';
 })
 
 
+
+
 export class ProjectComponent implements OnInit{
   displayedColumns: string[]=
-      ['Project Name', 'Description', 'Location', 'Badge', 'star'];
+      ['Project Name', 'Description', 'Location', 'Badge', 'ID'];
   projectName = new FormControl('')
   description = new FormControl('')
   location = new FormControl('')
   badge = new FormControl('')
   byBadge = new FormControl('')
+  updateBadge = new FormControl('');
   token = sessionStorage.getItem('token')
   dataSource: any = [];
-
-  deleteId: string = '';
-  public type: string = 'component';
-
+  closeResult: string;
+  
+  
   public disabled: boolean = false;
   responseProjects: any = [];
-
-
+  
+  
   public config: PerfectScrollbarConfigInterface = {};
-
+  
   @ViewChild(PerfectScrollbarComponent, { static: false }) componentRef?: PerfectScrollbarComponent;
   @ViewChild(PerfectScrollbarDirective, { static: false }) directiveRef?: PerfectScrollbarDirective;
-
-constructor(public projectService: ProjectService, private router: Router) {}
-
-ngOnInit() {
+  dialogRef: any;
   
+  constructor(public projectService: ProjectService, private router: Router, private dialog: MatDialog) {}
+  ngOnInit() {
+  }
+  
+  openDialog(id: string) {
+    let passedId: string = id;
+    let projectId = id
+  const dialogConfig = new MatDialogConfig();
+
+  dialogConfig.autoFocus = true;
+
+  this.dialog.open(DialogComponent, dialogConfig);
+  console.log(projectId, passedId)
 }
 
 
@@ -67,8 +80,8 @@ getByBadge1(badge: string) {
     })
 }
 
-deleteProject(deleteId: string){
-  console.log(deleteId)
-  this.projectService.deleteProject(deleteId).subscribe()
+deleteProject(projectId: string){
+  console.log(projectId)
+  this.projectService.deleteProject(projectId).subscribe()
 };
 }

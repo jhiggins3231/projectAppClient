@@ -33,10 +33,10 @@ export class ProjectService {
         return this.http.get(`${APIURL}/projects/view`, httpOptions)
     }
 
-    deleteProject(deleteId: string){
-        let url = `${APIURL}/projects/remove/${deleteId}`
+    deleteProject(projectId: string){
+        let url = `${APIURL}/projects/remove/${projectId}`
         console.log(url)
-        return this.http.delete(`${APIURL}/projects/remove/${deleteId}`, httpOptions)
+        return this.http.delete(`${APIURL}/projects/remove/${projectId}`, httpOptions)
     }
 
     editProject(editId: string, newProjectName: string, newDescription: string, newLocation: string, newBadge: string){

@@ -1,0 +1,22 @@
+<div>
+    <h2 mat-dialog-title>Update Project</h2>
+    <mat-dialog-content>
+        <mat-form-field class="input">
+              <input matInput placeholder="Project Name" [formControl]="projectName" class="place">
+        </mat-form-field>
+        <mat-form-field class="input">
+              <input matInput placeholder="Brief Description" [formControl]="description" class="place">
+        </mat-form-field>
+        <mat-form-field class="input">
+              <input matInput placeholder="Link to Project" [formControl]="location" class="place">
+        </mat-form-field>
+        <mat-form-field>
+        <mat-select required class="select" placeholder="Badge" [formControl]="badge">
+              <mat-option value="Gold">Gold</mat-option>
+              <mat-option value="Blue">Blue</mat-option>
+              <mat-option value="Red">Red</mat-option>
+        </mat-select>
+        </mat-form-field>
+        <button>Update</button>
+        <button (click)='deleteProject(projectId)'>Delete</button>
+    </mat-dialog-content>
