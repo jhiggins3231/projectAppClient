@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Projects } from '../projects';
 import { APIURL } from '../../environments/environment.prod';
-import { DH_CHECK_P_NOT_SAFE_PRIME } from 'constants';
 
 let token = sessionStorage.getItem('token')
 
@@ -58,5 +57,11 @@ export class ProjectService {
         let url = `${APIURL}/comments/view/${id}`
         console.log(url)
         return this.http.get(url, httpOptions)
+    }
+
+    deleteComment(id: string){
+        let url = `${APIURL}/comments/remove/${id}`;
+        console.log(url)
+        return this.http.delete(url, httpOptions)
     }
 }

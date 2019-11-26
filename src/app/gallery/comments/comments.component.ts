@@ -26,11 +26,17 @@ export class CommentsComponent implements OnInit {
   }
 
   getComments(id: string) {
-    this.projectsService.getComments(id).subscribe( (res) => this.comments = res)
+    this.projectsService.getComments(id).subscribe(
+      (res) => this.comments = res.comments
+    );
   }
+
+  deleteComment(id: string){
+    this.projectsService.deleteComment(id).subscribe();
+  };
 
   addComment(comment: string, id: string){
     this.projectsService.addComment(comment, id).subscribe()
-  }
+  };
 
 }

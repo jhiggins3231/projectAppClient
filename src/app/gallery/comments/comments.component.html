@@ -3,7 +3,7 @@
     <ul>
         <li>{{ name }}</li>
         <ul *ngFor='let comment of comments'>
-            <li>{{ comment.content }}</li>
+            <li>{{comment.commenter_username }}: {{ comment.content }} <button (click)='[deleteComment(comment.id), getComments(projectId)]'>x</button></li>
         </ul>
     </ul>
     <input type='text' placeholder='Comment' [(ngModel)]='newComment'>
