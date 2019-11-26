@@ -11,6 +11,7 @@ export class CommentsComponent implements OnInit {
   name: any;
   projectId: any;
   comments: any = [];
+  commentsResponse: any;
   newComment: string;
 
   constructor(public projectsService: ProjectService) { }
@@ -26,9 +27,10 @@ export class CommentsComponent implements OnInit {
   }
 
   getComments(id: string) {
-    this.projectsService.getComments(id).subscribe(
-      (res) => this.comments = res.comments
-    );
+    this.projectsService.getComments(id).subscribe((res) => {
+      this.commentsResponse = res
+      this.comments = this.commentsResponse.comments
+    });
   }
 
   deleteComment(id: string){
