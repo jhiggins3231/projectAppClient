@@ -11,3 +11,11 @@
     <button class='input' (click)='[addComment(newComment, projectId), getComments(projectId)]'>Add a comment</button>
     <p>{{ newComment }}</p>
 </div>
+
+<div>
+    <form>
+        <label for='comment'>Comment:</label>
+        <input name='comment' [(value)]='commentUpdate'>
+    </form>
+    <button>Update</button>
+</div>
