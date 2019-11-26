@@ -4,4 +4,5 @@ export class Projects {
     location: string
     badge: string
     owner: string
+    projectId: string
 }

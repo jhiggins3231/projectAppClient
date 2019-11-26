@@ -58,6 +58,8 @@ import { ProjectComponent } from './project/project.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { EditComponent } from './project/edit/edit.component';
 import { CommentsComponent } from './gallery/comments/comments.component';
+import { DialogComponent } from './project/dialog/dialog.component';
+
 
 
 @NgModule({
@@ -73,6 +75,7 @@ import { CommentsComponent } from './gallery/comments/comments.component';
     GalleryComponent,
     EditComponent,
     CommentsComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -124,6 +127,9 @@ import { CommentsComponent } from './gallery/comments/comments.component';
           blacklistedRoutes: ['http://localhost:3000/auth/signin']
         }
     })
+  ],
+  entryComponents: [
+    DialogComponent
   ],
   providers: [{
     provide: PERFECT_SCROLLBAR_CONFIG,
