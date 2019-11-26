@@ -2,4 +2,17 @@
     <app-navbar></app-navbar>
     <router-outlet></router-outlet>
     <h1 class="title"> Project Gallery </h1>
+    <ul *ngFor='let proj of galleryProjects' style='color: white'>
+        <li>Name: {{ proj.projectName }}</li>
+        <li>Link: {{ proj.location }}</li>
+        <li>ID: {{ proj.id }}</li>
+        <ul *ngFor='let comment of proj.comments'>
+            <li> {{ comment.content }}</li>
+        </ul>
+        <a routerLink='/comments' [state]='{id: proj.id, name: proj.projectName, description: proj.description, location: proj.location, comments: proj.comments}'>
+            <button>
+                Comments
+            </button>
+        </a>
+    </ul>
     </body>

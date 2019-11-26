@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectService } from '../_services/project.service';
 
 @Component({
   selector: 'app-gallery',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
+  galleryProjects: any = [];
 
-  constructor() { }
+  constructor(public projectService: ProjectService) { }
 
   ngOnInit() {
+    this.projectService.getAll().subscribe(
+      (results) => this.galleryProjects = results
+    )
   }
 
 }

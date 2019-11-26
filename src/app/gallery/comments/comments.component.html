@@ -1,0 +1,12 @@
+<div>
+    <p>This is Our comments Component</p>
+    <ul>
+        <li>{{ name }}</li>
+        <ul *ngFor='let comment of comments'>
+            <li>{{ comment.content }}</li>
+        </ul>
+    </ul>
+    <input type='text' placeholder='Comment' [(ngModel)]='newComment'>
+    <button class='input' (click)='[addComment(newComment, projectId), getComments(projectId)]'>Add a comment</button>
+    <p>{{ newComment }}</p>
+</div>

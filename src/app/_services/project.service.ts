@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Projects } from '../projects';
 import { APIURL } from '../../environments/environment.prod';
+import { DH_CHECK_P_NOT_SAFE_PRIME } from 'constants';
 
 let token = sessionStorage.getItem('token')
 
@@ -35,13 +36,27 @@ export class ProjectService {
 
     deleteProject(deleteId: string){
         let url = `${APIURL}/projects/remove/${deleteId}`
-        console.log(url)
+        // console.log(url)
         return this.http.delete(`${APIURL}/projects/remove/${deleteId}`, httpOptions)
     }
 
     editProject(editId: string, newProjectName: string, newDescription: string, newLocation: string, newBadge: string){
         let url = `${APIURL}/projects/edit/${editId}`
-        console.log(url)
+        // console.log(url)
         return this.http.put(url, {projectName: newProjectName, description: newDescription, location: newLocation, badge: newBadge }, httpOptions)
+    }
+
+    // COMMENTS SERVICES //
+
+    addComment(comment: string, id: string){
+        console.log({comment: {project_id: id, content: comment}})
+        let url = `${APIURL}/comments/comment`
+        return this.http.post(url, {comment: {project_id: id, content: comment}}, httpOptions)
+    }
+    
+    getComments(id: string){
+        let url = `${APIURL}/comments/view/${id}`
+        console.log(url)
+        return this.http.get(url, httpOptions)
     }
 }
