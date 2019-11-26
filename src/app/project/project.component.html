@@ -80,7 +80,7 @@
         
           <mat-menu #menu1="matMenu">
             <div *ngFor='let proj of dataSource'>
-                <button (click)='deleteProject(proj.id)' mat-menu-item routerLink="/projects">
+                <button (click)='[deleteProject(proj.id), getByBadge1()]' mat-menu-item routerLink="/projects">
                   <mat-icon>delete</mat-icon>
                   <span>Delete</span>
               </button>
