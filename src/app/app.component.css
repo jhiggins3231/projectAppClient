@@ -2,3 +2,6 @@
     font-family: Lobster;
     src: url('/assets/Lobster-Regular.ttf')
 }
+.cdk-overlay-connected-position-bounding-box {
+    z-index: 99999 !important;
+  }
