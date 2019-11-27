@@ -33,15 +33,35 @@ export class ProjectService {
         return this.http.get(`${APIURL}/projects/view`, httpOptions)
     }
 
-    deleteProject(projectId: string){
-        let url = `${APIURL}/projects/remove/${projectId}`
-        console.log(url)
-        return this.http.delete(`${APIURL}/projects/remove/${projectId}`, httpOptions)
+    deleteProject(deleteId: string){
+        let url = `${APIURL}/projects/remove/${deleteId}`
+        // console.log(url)
+        return this.http.delete(`${APIURL}/projects/remove/${deleteId}`, httpOptions)
     }
 
     editProject(editId: string, newProjectName: string, newDescription: string, newLocation: string, newBadge: string){
         let url = `${APIURL}/projects/edit/${editId}`
-        console.log(url)
+        // console.log(url)
         return this.http.put(url, {projectName: newProjectName, description: newDescription, location: newLocation, badge: newBadge }, httpOptions)
+    }
+
+    // COMMENTS SERVICES //
+
+    addComment(comment: string, id: string){
+        console.log({comment: {project_id: id, content: comment}})
+        let url = `${APIURL}/comments/comment`
+        return this.http.post(url, {comment: {project_id: id, content: comment}}, httpOptions)
+    }
+    
+    getComments(id: string){
+        let url = `${APIURL}/comments/view/${id}`
+        console.log(url)
+        return this.http.get(url, httpOptions)
+    }
+
+    deleteComment(id: string){
+        let url = `${APIURL}/comments/remove/${id}`;
+        console.log(url)
+        return this.http.delete(url, httpOptions)
     }
 }

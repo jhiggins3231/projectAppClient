@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<div>
+    <p>This is Our comments Component</p>
+    <ul>
+        <li>{{ name }}</li>
+        <ul *ngFor='let comment of comments'>
+            <li>{{comment.commenter_username }}: {{ comment.content }} <button (click)='[deleteComment(comment.id), getComments(projectId)]'>x</button></li>
+        </ul>
+    </ul>
+    <input type='text' placeholder='Comment' [(ngModel)]='newComment'>
+    <button class='input' (click)='[addComment(newComment, projectId), getComments(projectId)]'>Add a comment</button>
+    <p>{{ newComment }}</p>
+</div>
+
+<div>
+    <form>
+        <label for='comment'>Comment:</label>
+        <input name='comment' [(value)]='commentUpdate'>
+    </form>
+    <button>Update</button>
+</div>

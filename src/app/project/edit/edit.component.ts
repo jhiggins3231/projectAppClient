@@ -36,7 +36,7 @@ export class EditComponent implements OnInit {
     // history.pushState({data: history.state}, '', '');
     this.editId = history.state.data.id
   
-    console.log('ID: ', history.state.data.id, "Name: ", history.state.data.name, "Description: ", history.state.data.description, "Location: ", history.state.data.location, "Badge: ", history.state.data.badge)
+    // console.log('ID: ', history.state.data.id, "Name: ", history.state.data.name, "Description: ", history.state.data.description, "Location: ", history.state.data.location, "Badge: ", history.state.data.badge)
     this.projectService.editProject(history.state.data.id, this.newProjectName.value, this.newDescription.value, this.newLocation.value, this.newBadge.value)
     .subscribe()
     alert(`${this.newProjectName.value} was updated!`)
