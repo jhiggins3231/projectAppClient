@@ -1,21 +1,25 @@
+<body style="background-image: url('../assets/shore.jpeg'); width: 100vw; height: 100vh; background-size: cover;">
 <app-navbar></app-navbar>
-<div>
-    <p>This is Our comments Component</p>
+<router-outlet></router-outlet>
+    <h1 class="title">Comments</h1>
+    <mat-card class="cardInfo">
+            <perfect-scrollbar style="max-width: 350px; max-height: 300px;" [config]="config">
     <ul>
         <li>{{ name }}</li>
         <ul *ngFor='let comment of comments'>
-            <li>{{comment.commenter_username }}: {{ comment.content }} <button (click)='[deleteComment(comment.id), getComments(projectId)]'>x</button></li>
+            <li>{{comment.commenter_username }}: {{ comment.content }} <button mat-raised-button class="button" (click)='[deleteComment(comment.id), getComments(projectId)]'>Delete</button></li>
         </ul>
     </ul>
-    <input type='text' placeholder='Comment' [(ngModel)]='newComment'>
-    <button class='input' (click)='[addComment(newComment, projectId), getComments(projectId)]'>Add a comment</button>
-    <p>{{ newComment }}</p>
-</div>
+</perfect-scrollbar>
+   
+        <input type='text' class="input" placeholder='Comment' [(ngModel)]='newComment'>
+        <button mat-raised-button class='button' (click)='[addComment(newComment, projectId), getComments(projectId)]'>Add a comment</button>
+    
 
-<div>
-    <form>
-        <label for='comment'>Comment:</label>
-        <input name='comment' [(value)]='commentUpdate'>
-    </form>
-    <button>Update</button>
-</div>
+    
+        <form>
+        <input type="text" class="input" placeholder='Update Comment' [(value)]='commentUpdate'>
+        </form>
+        <button mat-raised-button class="button" >Update</button>
+    </mat-card>
+</body>

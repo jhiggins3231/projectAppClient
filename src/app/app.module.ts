@@ -59,6 +59,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { EditComponent } from './project/edit/edit.component';
 import { CommentsComponent } from './gallery/comments/comments.component';
 import { DialogComponent } from './project/dialog/dialog.component';
+import { SafeUrlPipe } from './safe-url.pipe';
 
 
 
@@ -75,7 +76,8 @@ import { DialogComponent } from './project/dialog/dialog.component';
     GalleryComponent,
     EditComponent,
     CommentsComponent,
-    DialogComponent
+    DialogComponent,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,
