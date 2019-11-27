@@ -12,3 +12,10 @@
     font-family: Volk;
     src: url('/assets/Vollkorn-Black.ttf');
 }
+iframe {
+    display: flex;
+    position: absolute;
+    left: 52%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+}

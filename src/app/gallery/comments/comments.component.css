@@ -3,3 +3,36 @@ div {
     width: 500px;
     background-color: green;
 }
+.title {
+    font-family: Lobster;
+    text-align: center;
+    font-size: 5em;
+    color: black;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.808);
+}
+.cardInfo{
+    background-color: rgba(255, 255, 255, 0.692);
+    width: 80vw;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    border: 2px solid black;background-color: rgba(255, 255, 255, 0.692);
+    align-content: center;
+}
+
+.button {
+    width: 120px;
+    height: 50px;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    margin: 10px;
+}
+.input{
+    display: flex;
+    height: 50%;
+    margin: 15px;
+}

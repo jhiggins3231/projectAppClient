@@ -28,6 +28,7 @@ export class ProjectComponent implements OnInit{
   token = sessionStorage.getItem('token')
   dataSource: any = [];
   closeResult: string;
+ 
   
   
   public disabled: boolean = false;
@@ -45,16 +46,20 @@ export class ProjectComponent implements OnInit{
   }
   
   openDialog(id: string) {
-    let passedId: string = id;
-    let projectId = id
+    let projectId:string = id
   const dialogConfig = new MatDialogConfig();
-
   dialogConfig.autoFocus = true;
+  this.dialog.open(DialogComponent, {
+    data: {
+      passedId: projectId
+    }});
+  console.log(projectId)
 
-  this.dialog.open(DialogComponent, dialogConfig);
-  console.log(projectId, passedId)
 }
 
+passId(): void {
+  this.router.navigate
+}
 
 addProjects(projectName: string, description: string, location: string, badge: string, owner: string) {
 
