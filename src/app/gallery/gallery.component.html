@@ -6,12 +6,12 @@
     <ul *ngFor="let proj of galleryProjects|slice:0:3;" style='color: white'>
         <li class="cardInfo">Name: {{ proj.projectName }}</li>
         <li class="cardInfo">Link: {{ proj.location }}</li>
-        <li class="cardInfo">ID: {{ proj.id }}</li>
+        <li class="cardInfo">Description: {{ proj.description }}</li>
         <ul *ngFor='let comment of proj.comments'>
             <li> {{ comment.content }}</li>
         </ul>
         <a routerLink="/comments" [state]="{ id: proj.id, name: proj.projectName, description: proj.description, location: proj.location, comments: proj.comments}">
-            <button>
+            <button mat-raised-button>
                 Comments
             </button>
         </a>
