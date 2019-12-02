@@ -121,14 +121,14 @@ import { SafeUrlPipe } from './safe-url.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     ScrollingModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: function tokenGetter() {
-          return localStorage.getItem('access_token');},
-          whitelistedDomains: ['localhost:3000'],
-          blacklistedRoutes: ['http://localhost:3000/auth/signin']
-        }
-    })
+    // JwtModule.forRoot({
+    //   config: {
+    //     tokenGetter: function tokenGetter() {
+    //       return localStorage.getItem('access_token');},
+    //       whitelistedDomains: ['localhost:3000'],
+    //       blacklistedRoutes: ['http://localhost:3000/auth/signin']
+    //     }
+    // })
   ],
   entryComponents: [
     DialogComponent
