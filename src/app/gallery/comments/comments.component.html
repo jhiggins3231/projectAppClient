@@ -7,7 +7,11 @@
     <ul>
         <li>{{ name }}</li>
         <ul *ngFor='let comment of comments'>
-            <li>{{comment.commenter_username }}: {{ comment.content }} <button mat-raised-button class="button" (click)='[deleteComment(comment.id), getComments(projectId)]'>Delete</button></li>
+            <li>{{comment.commenter_username }}: {{ comment.content }} 
+                <button mat-raised-button class="button" (click)='[deleteComment(comment.id), getComments(projectId)]'>Delete</button>
+                <button mat-raised-button class='button' (click)='[updateComment(comment.id), getComments(projectId)]'>Update</button>
+            </li>
+            
         </ul>
     </ul>
 </perfect-scrollbar>
@@ -20,6 +24,6 @@
         <form>
         <input type="text" class="input" placeholder='Update Comment' [(value)]='commentUpdate'>
         </form>
-        <button mat-raised-button class="button" >Update</button>
+        <button mat-raised-button class="button" (click)='updateComment(commentUpdate)' >Update</button>
     </mat-card>
 </body>

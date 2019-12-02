@@ -50,8 +50,8 @@ export class CommentsComponent implements OnInit {
     this.projectsService.addComment(comment, id).subscribe()
   };
 
-  updateComment(updateComment: string){
-    console.log(updateComment)
+  updateComment(id: string){
+    console.log(id)
   }
 
 }
