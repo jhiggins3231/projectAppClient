@@ -1,0 +1,41 @@
+.title {
+  font-family: Lobster;
+  text-align: center;
+  font-size: 5em;
+  color: whitesmoke;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
+}
+.modal-body{
+  height: 50vh;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  border: 2px solid rgb(58, 0, 97);
+  background-color: whitesmoke;
+  border-radius: 10px;
+  }
+.example-container1 {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  border: 2px solid rgb(58, 0, 97);
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+
+.input {
+  color: rgb(58, 0, 97);
+  display: flex;
+}
+.searchBadge {
+  border: 1px solid purple;
+  border-radius: 5px;
+}
+.searchButton {
+  display: flex;
+}
+.tableData {
+  width: 600px;
+}

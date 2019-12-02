@@ -1,0 +1,43 @@
+.tabs{
+    position: absolute;
+    left: 25%;
+    background-color:  whitesmoke;
+    border: 3px solid black;
+    color: whitesmoke;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    height: 50vh;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.692);
+}
+.title {
+    font-size: 32px;
+    color: black;
+    font-family: Volk;
+}
+.listItem {
+    font-family: Volk;
+    font-size: 18px;
+    color: black;
+    margin-top: 25px;    
+}
+.projectInfo {
+    font-family: Volk;
+    font-size: 18px;
+    color: black;
+    margin: 10px;
+    padding: 10px;
+    line-height: 46pt;
+}
+.howTo {
+    font-family: Volk;
+    font-size: 18px;
+    color: black;
+    margin: 10px;
+    padding: 10px;
+    line-height: 26pt;
+}
+@font-face {
+    font-family: Volk;
+    src: url('/assets/Vollkorn-Black.ttf');
+}
