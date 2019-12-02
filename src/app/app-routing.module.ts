@@ -8,9 +8,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectComponent } from './project/project.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { EditComponent } from './project/edit/edit.component';
-import { CommentsComponent } from './gallery/comments/comments.component';
+import { CommentsComponent } from './gallery/comments/comments.component'
 import { DialogComponent } from './project/dialog/dialog.component';
-
 
 const routes: Routes = [
   { path: 'user', component: UserComponent },
@@ -19,11 +18,11 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'contact', component: ContactComponent},
   { path: 'projects', component: ProjectComponent},
-  { path: 'gallery', component: GalleryComponent},
+  { path: 'gallery', pathMatch: 'full', component: GalleryComponent},
+  { path: 'comments',  pathMatch: 'full', component: CommentsComponent },
   { path: 'edit', component: EditComponent },
-  { path: 'dialog', component: DialogComponent},
-  { path: 'comments', component: CommentsComponent },
-  {path : '', component : LoginComponent}
+  { path: '', component : LoginComponent},
+  { path: 'projects/dialog', component: DialogComponent}
 ];
 
 @NgModule({

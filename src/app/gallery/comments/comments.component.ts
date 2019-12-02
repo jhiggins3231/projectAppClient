@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProjectService } from 'src/app/_services/project.service';
+import { PerfectScrollbarConfigInterface,
+  PerfectScrollbarComponent, PerfectScrollbarDirective } from 'ngx-perfect-scrollbar';
 
 @Component({
   selector: 'app-comments',
@@ -14,6 +16,12 @@ export class CommentsComponent implements OnInit {
   commentsResponse: any;
   newComment: string;
   commentUpdate: string;
+
+  public config: PerfectScrollbarConfigInterface = {};
+  
+  @ViewChild(PerfectScrollbarComponent, { static: false }) componentRef?: PerfectScrollbarComponent;
+  @ViewChild(PerfectScrollbarDirective, { static: false }) directiveRef?: PerfectScrollbarDirective;
+  dialogRef: any;
 
   constructor(public projectsService: ProjectService) { }
 

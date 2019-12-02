@@ -8,8 +8,8 @@ import { ProjectService } from '../_services/project.service';
 })
 export class GalleryComponent implements OnInit {
   galleryProjects: any = [];
-
-  constructor(public projectService: ProjectService) { }
+  
+  constructor(public projectService: ProjectService,) { }
 
   ngOnInit() {
     this.projectService.getAll().subscribe(

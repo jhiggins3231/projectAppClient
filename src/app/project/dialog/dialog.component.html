@@ -17,6 +17,7 @@
               <mat-option value="Red">Red</mat-option>
         </mat-select>
         </mat-form-field>
-        <button>Update</button>
+        <a [title]='projectId'></a>
+        <button (click)='updateProject(projectId)'>Update</button>
         <button (click)='deleteProject(projectId)'>Delete</button>
     </mat-dialog-content>

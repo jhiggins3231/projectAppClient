@@ -14,9 +14,7 @@ const httpOptions = {
 })
 
 export class ProjectService {
-
-
-
+ 
     constructor(public http: HttpClient) {
         let headers: HttpHeaders = new HttpHeaders();
         headers = headers.append('Content-Type', 'application/json');

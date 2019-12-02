@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ProjectService } from '../../_services/project.service';
+import { MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-dialog',
@@ -12,24 +13,25 @@ export class DialogComponent implements OnInit {
   description = new FormControl('')
   location = new FormControl('')
   badge = new FormControl('')
-  @Input () public projectId: any;
+  @Input() title: string;
  
 
-  constructor(public projectService: ProjectService) { }
-
+  constructor(public projectService: ProjectService, @Inject(MAT_DIALOG_DATA)public data: any) { }
   ngOnInit() {
-    history.pushState({data: history.state}, '', '');
-    console.log(history.state.data)
-    console.log(this.projectId)
+    console.log(this.data)
   }
 
-deleteProject(projectId: string){
-  this.projectId = projectId
-  console.log(history.state.data.id)
-  console.log(projectId)
-
-  this.projectService.deleteProject(projectId).subscribe()
+deleteProject(deleteId: string){
+  console.log(this.data)
+  deleteId = this.data.passedId
+  console.log(deleteId)
+  this.projectService.deleteProject(deleteId).subscribe()
     };
+
+updateProject(deleteId: string, projectName: string, description: string, location: string, badge: string) {
+  deleteId = this.data.passedId
+  this.projectService.editProject(deleteId, this.projectName.value, this.description.value, this.location.value, this.badge.value).subscribe()
+};
 }
 
 

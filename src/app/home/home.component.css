@@ -10,10 +10,11 @@
     height: 50vh;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
 }
-.label {
+.title {
+    font-size: 32px;
+    color: black;
     font-family: Volk;
-    background-color: red;
-  }
+}
 .listItem {
     font-family: Volk;
     font-size: 18px;
@@ -27,6 +28,14 @@
     margin: 10px;
     padding: 10px;
     line-height: 46pt;
+}
+.howTo {
+    font-family: Volk;
+    font-size: 18px;
+    color: black;
+    margin: 10px;
+    padding: 10px;
+    line-height: 26pt;
 }
 @font-face {
     font-family: Volk;
