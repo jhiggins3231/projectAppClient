@@ -23,4 +23,6 @@
 .cardInfo {
     color: black;
     line-height: 3em;
+    display: flex;
+    word-break: break-all;
 }
