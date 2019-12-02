@@ -1,0 +1,28 @@
+.title {
+    font-family: Lobster;
+    text-align: center;
+    font-size: 5em;
+    color: whitesmoke;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.479);
+}
+@font-face {
+    font-family: Lobster;
+    src: url('/assets/Lobster-Regular.ttf')
+}
+.galleryCard{
+    background-color: rgba(255, 255, 255, 0.692);
+    width: 60vw;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.cardInfo {
+    color: black;
+    line-height: 3em;
+    display: flex;
+    word-break: break-all;
+}

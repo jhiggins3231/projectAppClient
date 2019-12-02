@@ -1,0 +1,10 @@
+div {
+    background-color: white;
+}
+.title {
+    font-family: Lobster;
+    text-align: center;
+    font-size: 5em;
+    color: whitesmoke;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
+  }

@@ -1,0 +1,52 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ProjectService } from 'src/app/_services/project.service';
+import { PerfectScrollbarConfigInterface,
+  PerfectScrollbarComponent, PerfectScrollbarDirective } from 'ngx-perfect-scrollbar';
+
+@Component({
+  selector: 'app-comments',
+  templateUrl: './comments.component.html',
+  styleUrls: ['./comments.component.css']
+})
+export class CommentsComponent implements OnInit {
+
+  name: any;
+  projectId: any;
+  comments: any = [];
+  commentsResponse: any;
+  newComment: string;
+
+  public config: PerfectScrollbarConfigInterface = {};
+  
+  @ViewChild(PerfectScrollbarComponent, { static: false }) componentRef?: PerfectScrollbarComponent;
+  @ViewChild(PerfectScrollbarDirective, { static: false }) directiveRef?: PerfectScrollbarDirective;
+  dialogRef: any;
+
+  constructor(public projectsService: ProjectService) { }
+
+  ngOnInit() {
+    history.pushState({data: history.state}, '', '');
+    console.log(history.state.data.name)
+    console.log(history.state.data.comments)
+
+    this.name = history.state.data.name;
+    this.comments = history.state.data.comments
+    this.projectId = history.state.data.id
+  }
+
+  getComments(id: string) {
+    this.projectsService.getComments(id).subscribe((res) => {
+      this.commentsResponse = res
+      this.comments = this.commentsResponse.comments
+    });
+  }
+
+  deleteComment(id: string){
+    this.projectsService.deleteComment(id).subscribe();
+  };
+
+  addComment(comment: string, id: string){
+    this.projectsService.addComment(comment, id).subscribe()
+  };
+
+}

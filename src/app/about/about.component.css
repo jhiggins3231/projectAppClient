@@ -1,0 +1,21 @@
+.title {
+    font-family: Lobster;
+    text-align: center;
+    font-size: 5em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
+}
+@font-face {
+    font-family: Lobster;
+    src: url('/assets/Lobster-Regular.ttf')
+}
+@font-face {
+    font-family: Volk;
+    src: url('/assets/Vollkorn-Black.ttf');
+}
+iframe {
+    display: flex;
+    position: absolute;
+    left: 52%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+}

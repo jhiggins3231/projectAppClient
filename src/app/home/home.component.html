@@ -1,0 +1,40 @@
+<body style="background: url(../assets/mountain.jpeg); width: 100vw; height: 100vh; background-size: cover;">
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+    <mat-tab-group class="tabs" animationDuration="2000ms" mat-align-tabs='center' style="width: 50vw;">
+                <mat-tab label="How To" class="label" ><h1 class="title"> How To </h1> 
+                        <p class="howTo">
+                                <ul class="howTo">
+                                        <li>
+                                                To add/update/delete projects navigate to the Add/View section via the drop down in the top right.
+                                        </li>
+                                        <li>
+                                                To add projects fill out the form in the Add/View section and click the "Add" button.
+                                        </li>
+                                        <li>
+                                                To Update/Delete projects use the drop down to select projects by badge and search. Find the project you wish to Update/Delete and click on the "Click" selection at the right of the table. If you wish to delete simply click the "delete" button. If you wish to update, fill out the form and click "Update".
+                                        </li>
+                                        <li>
+                                                The Gallery is designed to display 3 Projects. Admins have the ability to update these to different projects.
+                                                You're also able to comment on the listed projects.
+                                        </li>
+                                        <li>
+                                                The Comments section is used to add comments to the related project. Simply enter your comment and click "Add a comment".
+                                        </li>
+                                </ul>
+
+                        </mat-tab>
+
+                        
+                <mat-tab label="Our Project" class="label" >
+                        <p class="projectInfo">For our Red Badge project we decided to make something that could benefit future students here at Eleven Fifty. Throughout the course we often found ourselves asking for examples of past projects or portfolios. Now thanks to our app we have a place for everyone to find, upload, and ask questions about projects done by other EFA students.</p>    
+                </mat-tab>
+                <mat-tab label="Our Group" class="label" > 
+                    <mat-list>
+                            <mat-list-item class="listItem"> Elijah Smith </mat-list-item>
+                            <mat-list-item class="listItem"> Karina Rodriguez </mat-list-item>
+                            <mat-list-item class="listItem"> James Higgins </mat-list-item>
+                    </mat-list>
+                </mat-tab>
+          </mat-tab-group>
+    </body>
