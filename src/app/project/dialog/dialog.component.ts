@@ -12,16 +12,22 @@ export class DialogComponent implements OnInit {
   description = new FormControl('')
   location = new FormControl('')
   badge = new FormControl('')
-  projectId: any;
+  @Input () public projectId: any;
  
 
   constructor(public projectService: ProjectService) { }
 
   ngOnInit() {
+    history.pushState({data: history.state}, '', '');
+    console.log(history.state.data)
+    console.log(this.projectId)
   }
 
 deleteProject(projectId: string){
-  console.log()
+  this.projectId = projectId
+  console.log(history.state.data.id)
+  console.log(projectId)
+
   this.projectService.deleteProject(projectId).subscribe()
     };
 }

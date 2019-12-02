@@ -13,6 +13,7 @@ export class CommentsComponent implements OnInit {
   comments: any = [];
   commentsResponse: any;
   newComment: string;
+  commentUpdate: string;
 
   constructor(public projectsService: ProjectService) { }
 
@@ -40,5 +41,9 @@ export class CommentsComponent implements OnInit {
   addComment(comment: string, id: string){
     this.projectsService.addComment(comment, id).subscribe()
   };
+
+  updateComment(updateComment: string){
+    console.log(updateComment)
+  }
 
 }

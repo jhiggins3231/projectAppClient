@@ -45,14 +45,13 @@ export class ProjectComponent implements OnInit{
   }
   
   openDialog(id: string) {
-    let passedId: string = id;
-    let projectId = id
+  let projectId = id;
   const dialogConfig = new MatDialogConfig();
 
   dialogConfig.autoFocus = true;
 
   this.dialog.open(DialogComponent, dialogConfig);
-  console.log(projectId, passedId)
+  console.log("Project ID: ", projectId)
 }
 
 

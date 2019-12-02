@@ -9,6 +9,7 @@ import { ProjectComponent } from './project/project.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { EditComponent } from './project/edit/edit.component';
 import { CommentsComponent } from './gallery/comments/comments.component';
+import { DialogComponent } from './project/dialog/dialog.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'projects', component: ProjectComponent},
   { path: 'gallery', component: GalleryComponent},
   { path: 'edit', component: EditComponent },
+  { path: 'dialog', component: DialogComponent},
   { path: 'comments', component: CommentsComponent },
   {path : '', component : LoginComponent}
 ];
