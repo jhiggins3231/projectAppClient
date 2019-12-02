@@ -23,7 +23,7 @@
           <mat-option value="Red">Red</mat-option>
     </mat-select>
     </mat-form-field>
-    <button mat-raised-button class="input" (click)='[addProjects(), getByBadge1()]'>Add</button>
+    <button mat-raised-button class="input" (click)='[addProjects(projectName, description, location, badge, owner), getByBadge1(badge)]'>Add</button>
 </div>
 </mat-grid-tile>
 
@@ -34,7 +34,7 @@
       <mat-option value="Blue">Blue</mat-option>
       <mat-option value="Red">Red</mat-option>
     </mat-select>
-    <button class="searchButton" (click)='getByBadge()'>Search</button>
+    <button class="searchButton" (click)='getByBadge(byBadge)'>Search</button>
     <perfect-scrollbar style="max-width: 650px; max-height: 300px; color: purple;" [config]="config">
     <table mat-table [dataSource]="dataSource" class="tableData">
 
