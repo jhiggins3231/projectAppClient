@@ -8,7 +8,7 @@
     text-align: center;
     border-radius: 5px;
     height: 50vh;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.692);
 }
 .title {
     font-size: 32px;

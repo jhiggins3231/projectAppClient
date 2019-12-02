@@ -54,11 +54,6 @@ export class ProjectComponent implements OnInit{
       passedId: projectId
     }});
   console.log(projectId)
-
-}
-
-passId(): void {
-  this.router.navigate
 }
 
 addProjects(projectName: string, description: string, location: string, badge: string, owner: string) {
