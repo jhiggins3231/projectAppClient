@@ -14,6 +14,7 @@ export class AdminGuard implements CanActivate {
     state: RouterStateSnapshot) {
         let admin = sessionStorage.getItem('admin')
         if (admin === 'true') {
+            alert('Admin Logged In')
           return true
         } else {
           return false
