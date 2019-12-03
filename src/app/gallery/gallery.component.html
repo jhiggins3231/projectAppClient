@@ -5,7 +5,7 @@
     <mat-card class="galleryCard">
     <ul *ngFor="let proj of galleryProjects|slice:0:3;" style='color: white'>
         <li class="cardInfo">Name: {{ proj.projectName }}</li>
-        <li class="cardInfo">Link: {{ proj.location }}</li>
+        <li class="cardInfo">Link: <a target='_blank' href='{{ proj.location }}'> View Project</a></li>
         <li class="cardInfo">Description: {{ proj.description }}</li>
         <ul *ngFor='let comment of proj.comments'>
             <li> {{ comment.content }}</li>

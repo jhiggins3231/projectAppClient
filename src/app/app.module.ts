@@ -56,10 +56,10 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectComponent } from './project/project.component';
 import { GalleryComponent } from './gallery/gallery.component';
-import { EditComponent } from './project/edit/edit.component';
 import { CommentsComponent } from './gallery/comments/comments.component';
 import { DialogComponent } from './project/dialog/dialog.component';
 import { SafeUrlPipe } from './safe-url.pipe';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -74,10 +74,10 @@ import { SafeUrlPipe } from './safe-url.pipe';
     ContactComponent,
     ProjectComponent,
     GalleryComponent,
-    EditComponent,
     CommentsComponent,
     DialogComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -121,14 +121,14 @@ import { SafeUrlPipe } from './safe-url.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     ScrollingModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: function tokenGetter() {
-          return localStorage.getItem('access_token');},
-          whitelistedDomains: ['localhost:3000'],
-          blacklistedRoutes: ['http://localhost:3000/auth/signin']
-        }
-    })
+    // JwtModule.forRoot({
+    //   config: {
+    //     tokenGetter: function tokenGetter() {
+    //       return localStorage.getItem('access_token');},
+    //       whitelistedDomains: ['localhost:3000'],
+    //       blacklistedRoutes: ['http://localhost:3000/auth/signin']
+    //     }
+    // })
   ],
   entryComponents: [
     DialogComponent

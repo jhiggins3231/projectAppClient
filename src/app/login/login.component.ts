@@ -27,9 +27,13 @@ export class LoginComponent implements OnInit {
       this.auth.signin(this.username.value, this.password.value)
       .subscribe(user => {
         sessionStorage.setItem('token', user.sessionToken)
-        sessionStorage.setItem('admin', user.user.admin)
-        alert(user.message)
-        window.location.href = '/home'
+        sessionStorage.setItem('role', user.user.role)
+        alert(`${user.user.role} successfully logged in`)
+        if(sessionStorage.getItem('role') === 'admin'){
+          window.location.href = '/admin'
+        } else {
+          window.location.href = '/home'
+        }
       },
       err => {
         alert(err.error.message)

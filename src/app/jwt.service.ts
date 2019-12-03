@@ -13,8 +13,8 @@ export class JwtService {
     localStorage.setItem('access_token', res.access_token); 
     }))
   }
-  signup(email: string, username: string, password: string) {
-    return this.http.post<{access_token: string}>('http://localhost:3000/auth/signup', {username, email, password}).pipe(tap(res => {
+  signup(email: string, username: string, password: string, role: string) {
+    return this.http.post<{access_token: string}>('http://localhost:3000/auth/signup', {username, email, password, role}).pipe(tap(res => {
     this.login(email, password)  
     }))
   }
