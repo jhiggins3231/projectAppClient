@@ -9,7 +9,7 @@
         <ul *ngFor='let comment of comments'>
             <li>{{comment.commenter_username }}: {{ comment.content }} 
                 <button mat-raised-button class="button" (click)='[deleteComment(comment.id), getComments(projectId)]'>Delete</button>
-                <button mat-raised-button class='button' (click)='[updateComment(comment.id), getComments(projectId)]'>Update</button>
+                <button mat-raised-button class='button' (click)='setUpdateValue(comment.content, comment.id)'>Edit</button>
             </li>
             
         </ul>
@@ -21,9 +21,8 @@
     
 
     
-        <form>
-        <input type="text" class="input" placeholder='Update Comment' [(value)]='commentUpdate'>
-        </form>
-        <button mat-raised-button class="button" (click)='updateComment(commentUpdate)' >Update</button>
+        
+        <input type="text" class="input" name='update' [placeholder]='updateContent' [(ngModel)]='updateContent'>
+        <button mat-raised-button class="button" (click)='updateComment(updateId, updatedComment)'>Update</button>
     </mat-card>
 </body>

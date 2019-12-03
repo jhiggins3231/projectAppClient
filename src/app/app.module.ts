@@ -56,7 +56,6 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectComponent } from './project/project.component';
 import { GalleryComponent } from './gallery/gallery.component';
-import { EditComponent } from './project/edit/edit.component';
 import { CommentsComponent } from './gallery/comments/comments.component';
 import { DialogComponent } from './project/dialog/dialog.component';
 import { SafeUrlPipe } from './safe-url.pipe';
@@ -74,7 +73,6 @@ import { SafeUrlPipe } from './safe-url.pipe';
     ContactComponent,
     ProjectComponent,
     GalleryComponent,
-    EditComponent,
     CommentsComponent,
     DialogComponent,
     SafeUrlPipe,

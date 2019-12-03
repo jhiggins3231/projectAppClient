@@ -15,7 +15,10 @@ export class CommentsComponent implements OnInit {
   comments: any = [];
   commentsResponse: any;
   newComment: string;
-  commentUpdate: string;
+
+  updateId: string;
+  updateContent: string;
+  updatedComment: string;
 
   public config: PerfectScrollbarConfigInterface = {};
   
@@ -50,8 +53,16 @@ export class CommentsComponent implements OnInit {
     this.projectsService.addComment(comment, id).subscribe()
   };
 
-  updateComment(id: string){
-    console.log(id)
+  setUpdateValue(updateContent: string, updateId: string){
+    this.updateContent = updateContent
+    this.updateId = updateId
   }
 
+  updateComment(updateId: string, updatedComment: string){
+    updatedComment = this.updateContent
+    this.projectsService.updateComment(updateId, updatedComment).subscribe(
+      (response) =>
+      window.location.href = '/gallery'
+    )
+  }
 }
