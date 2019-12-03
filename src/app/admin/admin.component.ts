@@ -18,4 +18,18 @@ export class AdminComponent implements OnInit {
     )
   }
 
+  removeProject(id: string){
+    console.log(id)
+    this.projectService.removeProject(id).subscribe(
+      (response) => window.location.href = '/admin'
+    );
+  }
+
+  removeComment(id: string){
+    console.log(id)
+    this.projectService.removeComment(id).subscribe(
+      (response) => window.location.href = '/admin'
+    )
+  }
+
 }

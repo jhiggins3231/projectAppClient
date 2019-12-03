@@ -5,13 +5,13 @@
     <mat-card class="galleryCard">
     <ul *ngFor="let proj of adminResults" style='color: black'>
         <li class="cardInfo">Name: {{ proj.projectName }}
-            <button>Remove Project</button>
+            <button (click)='removeProject( proj.id )'>Remove Project</button>
         </li>
         <li class="cardInfo">Link: <a target='_blank' href='{{ proj.location }}'> View Project</a></li>
         <li>Comments: 
             <ul *ngFor='let comment of proj.comments'>
-                <li>{{ comment.commenter_username }}: {{ comment.content }} {{ comment.id }}
-                    <button>Remove Comment</button>
+                <li>{{ comment.commenter_username }}: {{ comment.content }}
+                    <button (click)='removeComment( comment.id )'>Remove Comment</button>
                 </li>
             </ul>
         </li>
