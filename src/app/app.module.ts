@@ -77,7 +77,7 @@ import { SafeUrlPipe } from './safe-url.pipe';
     EditComponent,
     CommentsComponent,
     DialogComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
   ],
   imports: [
     BrowserModule,
