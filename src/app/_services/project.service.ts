@@ -62,4 +62,25 @@ export class ProjectService {
         console.log(url)
         return this.http.delete(url, httpOptions)
     }
+
+    updateComment(id: string, newComment: string){
+        let url = `${APIURL}/comments/edit/${id}`;
+        console.log(url)
+        console.log(newComment)
+        return this.http.put(url, { newComment: newComment }, httpOptions)
+    }
+
+    // ADMIN SERVICES //
+
+    removeProject(id: string){
+        let url = `${APIURL}/projects/adminremove/${id}`
+        console.log(url)
+        return this.http.delete(url, httpOptions)
+    }
+
+    removeComment(id: string){
+        let url = `${APIURL}/comments/adminremove/${id}`
+        console.log(url)
+        return this.http.delete(url, httpOptions)
+    }
 }

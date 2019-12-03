@@ -7,9 +7,10 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectComponent } from './project/project.component';
 import { GalleryComponent } from './gallery/gallery.component';
-import { EditComponent } from './project/edit/edit.component';
 import { CommentsComponent } from './gallery/comments/comments.component'
 import { DialogComponent } from './project/dialog/dialog.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminGuard } from './_services/admin.guard';
 
 const routes: Routes = [
   { path: 'user', component: UserComponent },
@@ -20,9 +21,9 @@ const routes: Routes = [
   { path: 'projects', component: ProjectComponent},
   { path: 'gallery', pathMatch: 'full', component: GalleryComponent},
   { path: 'comments',  pathMatch: 'full', component: CommentsComponent },
-  { path: 'edit', component: EditComponent },
   { path: '', component : LoginComponent},
-  { path: 'projects/dialog', component: DialogComponent}
+  { path: 'projects/dialog', component: DialogComponent},
+  { path: 'admin', component: AdminComponent, canActivate: [AdminGuard] }
 ];
 
 @NgModule({

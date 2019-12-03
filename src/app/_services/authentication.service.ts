@@ -17,7 +17,7 @@ export class AuthenticationService {
     constructor(private http: HttpClient) {}
 
     signUp(username: string, email: string, password: string){
-        return this.http.post<User>(`${APIURL}/auth/signup`, {username: username, email: email, password: password})
+        return this.http.post<User>(`${APIURL}/auth/signup`, {username: username, email: email, password: password, role: 'user'})
     }
     signin(username: string, password: string) {
         return this.http.post<User>(`${APIURL}/auth/login`, { username: username, password: password})
