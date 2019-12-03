@@ -29,6 +29,7 @@
     "@angular/router": "~8.2.14",
     "@auth0/angular-jwt": "^3.0.1",
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
+    "dotenv": "^8.2.0",
     "hammerjs": "^2.0.8",
     "ngx-perfect-scrollbar": "^8.0.0",
     "rxjs": "~6.4.0",
