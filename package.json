@@ -1,5 +1,5 @@
 {
-  "name": "projects-app",
+  "name": "Jke1150ProjectsClient",
   "version": "0.0.0",
   "engines": {
     "node": "13.1.0"
@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build --prod",
-    "start": "serve -s dist/projects-app"
+    "start": "serve -s dist/Jke1150ProjectsClient"
   },
   "private": true,
   "dependencies": {
