@@ -29,7 +29,11 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('token', user.sessionToken)
         sessionStorage.setItem('role', user.user.role)
         alert(`${user.user.role} successfully logged in`)
-        window.location.href = '/home'
+        if(sessionStorage.getItem('role') === 'admin'){
+          window.location.href = '/admin'
+        } else {
+          window.location.href = '/home'
+        }
       },
       err => {
         alert(err.error.message)
