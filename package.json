@@ -1,5 +1,5 @@
 {
-  "name": "projectsapp",
+  "name": "projects-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -9,7 +9,7 @@
     "e2e": "ng e2e",
 
     "heroku-postbuild": "ng build --prod",
-    "start": "serve -s dist/ProjectsApp"
+    "start": "serve -s dist/projects-app"
 
   },
   "private": true,
