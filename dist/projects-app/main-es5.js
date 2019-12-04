@@ -770,7 +770,7 @@
                 function AppRoutingModule() {
                 }
                 return AppRoutingModule;
-            }());
+            }()); // I'm adding a meaningless change
             AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
                     imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
@@ -1625,7 +1625,7 @@
             var APIURL = '';
             switch (window.location.hostname) {
                 case 'jke-1150-projects-client.herokuapp.com':
-                    APIURL = 'https://jke-1150-projects-client.herokuapp.com';
+                    APIURL = 'https://jke-1150-projects-server.herokuapp.com';
                     break;
                 default:
                     APIURL = 'http://localhost:3000';

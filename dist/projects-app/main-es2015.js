@@ -772,7 +772,7 @@ const routes = [
     { path: 'admin', component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_12__["AdminComponent"], canActivate: [_services_admin_guard__WEBPACK_IMPORTED_MODULE_13__["AdminGuard"]] }
 ];
 let AppRoutingModule = class AppRoutingModule {
-};
+}; // I'm adding a meaningless change
 AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
@@ -1776,7 +1776,7 @@ const environment = {
 let APIURL = '';
 switch (window.location.hostname) {
     case 'jke-1150-projects-client.herokuapp.com':
-        APIURL = 'https://jke-1150-projects-client.herokuapp.com';
+        APIURL = 'https://jke-1150-projects-server.herokuapp.com';
         break;
     default:
         APIURL = 'http://localhost:3000';
