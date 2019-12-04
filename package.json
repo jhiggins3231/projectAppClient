@@ -11,8 +11,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod",
-    "start": "ng serve -s dist/projects-app"
+    "postinstall": "ng build --prod",
+    "start": "serve -s dist/projects-app"
   },
   "private": true,
   "dependencies": {
