@@ -3,6 +3,8 @@ import { ProjectService } from '../_services/project.service';
 import { PerfectScrollbarConfigInterface,
   PerfectScrollbarComponent, PerfectScrollbarDirective } from 'ngx-perfect-scrollbar';
 
+  
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -11,6 +13,8 @@ import { PerfectScrollbarConfigInterface,
 export class AdminComponent implements OnInit {
 
   adminResults: any = [];
+
+  public config: PerfectScrollbarConfigInterface = {};
 
   @ViewChild(PerfectScrollbarComponent, { static: false }) componentRef?: PerfectScrollbarComponent;
   @ViewChild(PerfectScrollbarDirective, { static: false }) directiveRef?: PerfectScrollbarDirective;
