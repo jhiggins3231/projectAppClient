@@ -56,7 +56,7 @@ export class ProjectComponent implements OnInit{
   console.log(projectId)
 }
 
-addProjects(projectName: string, description: string, location: string, badge: string, owner: string) {
+addProjects() {
 
     this.projectService.add
     (this.projectName.value, this.description.value, this.location.value, this.badge.value)
@@ -72,7 +72,7 @@ getByBadge(byBadge: string) {
       console.log(this.dataSource)
     })
 }
-getByBadge1(badge: string) {
+getByBadge1() {
   this.projectService.getByBadge(this.badge.value).subscribe(res => 
     {
       this.dataSource = res;
