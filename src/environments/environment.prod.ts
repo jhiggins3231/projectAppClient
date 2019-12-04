@@ -5,9 +5,9 @@ export const environment = {
 export let APIURL = '';
  
 switch (window.location.hostname) {
-  case 'jhkres-redbadge-client.herokuapp.com':
-    APIURL = 'http://jhkres-redbadge-client.herokuapp.com'
-    break
+  case 'jke-1150-projects-client.herokuapp.com':
+    APIURL = 'https://jke-1150-projects-server.herokuapp.com'
+    break;
     default:
       APIURL = 'http://localhost:3000'
 }
