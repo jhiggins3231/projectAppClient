@@ -65,7 +65,7 @@ addProjects() {
     }
 
     
-getByBadge(byBadge: string) {
+getByBadge() {
   this.projectService.getByBadge(this.byBadge.value).subscribe(res => 
     {
       this.dataSource = res;

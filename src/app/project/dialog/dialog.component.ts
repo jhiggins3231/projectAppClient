@@ -28,7 +28,7 @@ deleteProject(deleteId: string){
   this.projectService.deleteProject(deleteId).subscribe()
 };
 
-updateProject(deleteId: string, projectName: string, description: string, location: string, badge: string) {
+updateProject(deleteId: string) {
   deleteId = this.data.passedId
   this.projectService.editProject(deleteId, this.projectName.value, this.description.value, this.location.value, this.badge.value).subscribe()
 };
