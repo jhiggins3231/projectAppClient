@@ -1,9 +1,9 @@
 <mat-toolbar style="background-color: black; color: whitesmoke; background-image: url('../assets/logoPNG.png'); background-repeat: no-repeat; background-size: 210px; background-position: center;">
         <mat-toolbar-row>
-            <button mat-button routerLink='/login' style="left: 0%;" >Login</button> 
-            <button mat-button routerLink='/about' style="left: 90%;" >About</button>
-            <button mat-button routerLink='/contact' style="left: 80%;">Contact</button>
-            <button mat-icon-button style="left: 85%;" [matMenuTriggerFor]="menu">
+            <button mat-button routerLink='/login' style="left: 0%; position: absolute; display: flex;" >Login</button>
+            <button mat-button routerLink='/about' style="left: 90%; position: absolute; display: flex;" >About</button>
+            <button mat-button routerLink='/contact' style="left: 85%;position: absolute; display: flex;">Contact</button>
+            <button mat-icon-button style="left: 95%; display: flex; position: absolute ;" [matMenuTriggerFor]="menu">
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
