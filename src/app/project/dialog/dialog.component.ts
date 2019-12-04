@@ -21,15 +21,15 @@ export class DialogComponent implements OnInit {
     console.log(this.data)
   }
 
-deleteProject(deleteId: string){
+deleteProject(){
   console.log(this.data)
-  deleteId = this.data.passedId
+  const deleteId = this.data.passedId
   console.log(deleteId)
   this.projectService.deleteProject(deleteId).subscribe()
 };
 
-updateProject(deleteId: string) {
-  deleteId = this.data.passedId
+updateProject() {
+  const deleteId = this.data.passedId
   this.projectService.editProject(deleteId, this.projectName.value, this.description.value, this.location.value, this.badge.value).subscribe()
 };
 }
