@@ -1,16 +1,15 @@
 {
-  "name": "projectsapp",
+  "name": "projects-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
 
     "heroku-postbuild": "ng build --prod",
-    "start": "serve -s dist/ProjectsApp"
+    "start": "serve -s dist/projects-app"
 
   },
   "private": true,
