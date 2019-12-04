@@ -34,7 +34,7 @@
       <mat-option value="Blue">Blue</mat-option>
       <mat-option value="Red">Red</mat-option>
     </mat-select>
-    <button class="searchButton" (click)='getByBadge()'>Search</button>
+    <button mat-raised-button class="searchButton" (click)='getByBadge()'>Search</button>
     <perfect-scrollbar style="max-width: 650px; max-height: 300px; color: purple;" [config]="config">
     <table mat-table [dataSource]="dataSource" class="tableData">
 

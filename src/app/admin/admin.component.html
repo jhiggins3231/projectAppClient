@@ -12,7 +12,7 @@
         <li>Comments:
             <ul *ngFor='let comment of proj.comments'>
                 <li>{{ comment.commenter_username }}: {{ comment.content }}
-                    <button (click)='removeComment( comment.id )'>Remove Comment</button>
+                    <button mat-raised-button (click)='removeComment( comment.id )'>Remove Comment</button>
                 </li>
             </ul>
         </li>
