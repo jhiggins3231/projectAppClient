@@ -12,7 +12,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build --prod",
-    "start": "serve -s dist/ProjectsApp"
+    "start": "serve -s dist/projects-app"
   },
   "private": true,
   "dependencies": {
