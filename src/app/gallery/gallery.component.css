@@ -11,7 +11,7 @@
 }
 .galleryCard{
     background-color: rgba(255, 255, 255, 0.692);
-    width: 60vw;
+    width: 63vw;
     display: flex;
     position: absolute;
     left: 50%;
@@ -22,7 +22,7 @@
 }
 .cardInfo {
     color: black;
-    line-height: 3em;
+    line-height: 2em;
     display: flex;
     word-break: break-all;
 }
