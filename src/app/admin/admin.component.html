@@ -3,7 +3,7 @@
     <router-outlet></router-outlet>
     <h1 class="title"> Admin Portal </h1>
     <mat-card class="galleryCard" style='width: 50vw; height: 50vh; display: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)'>
-            <perfect-scrollbar style="max-width: 650px; max-height: 300px; color: purple;" [config]="config">
+            <perfect-scrollbar style="max-width: 50vw; max-height: 50vh; color: purple;" [config]="config">
     <ul *ngFor="let proj of adminResults" style='color: black'>
         <li class="cardInfo">Name: {{ proj.projectName }}
             <button (click)='removeProject( proj.id )'>Remove Project</button>
