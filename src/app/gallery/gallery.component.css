@@ -22,7 +22,7 @@
 }
 .cardInfo {
     color: black;
-    line-height: 1em;
+    line-height: 3em;
     display: flex;
     word-break: break-all;
 }
