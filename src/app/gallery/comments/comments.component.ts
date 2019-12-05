@@ -45,6 +45,10 @@ export class CommentsComponent implements OnInit {
     });
   }
 
+  viewComments(id){
+    this.projectsService.getComments(id).subscribe()
+  }
+
   deleteComment(id: string){
     this.projectsService.deleteComment(id).subscribe();
   };
@@ -60,9 +64,6 @@ export class CommentsComponent implements OnInit {
 
   updateComment(updateId: string, updatedComment: string){
     updatedComment = this.updateContent
-    this.projectsService.updateComment(updateId, updatedComment).subscribe(
-      (response) =>
-      window.location.href = '/gallery'
-    )
+    this.projectsService.updateComment(updateId, updatedComment).subscribe()
   }
 }

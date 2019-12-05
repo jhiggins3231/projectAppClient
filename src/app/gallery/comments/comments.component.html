@@ -18,6 +18,8 @@
    
         <input type='text' class="input" placeholder='Comment' [(ngModel)]='newComment'>
         <button mat-raised-button class='button' (click)='[addComment(newComment, projectId), getComments(projectId)]'>Add a comment</button>
+
+        <button mat-raised-button class='button' (click)='getComments(projectId)'>View Comments</button>
     
 
     
