@@ -36,6 +36,8 @@ export class CommentsComponent implements OnInit {
     this.name = history.state.data.name;
     this.comments = history.state.data.comments
     this.projectId = history.state.data.id
+
+    this.getComments(this.projectId)
   }
 
   getComments(id: string) {
@@ -50,7 +52,9 @@ export class CommentsComponent implements OnInit {
   }
 
   deleteComment(id: string){
-    this.projectsService.deleteComment(id).subscribe();
+    this.projectsService.deleteComment(id).subscribe(
+      (res) => this.getComments(this.projectId)
+    );
   };
 
   addComment(comment: string, id: string){
@@ -64,6 +68,8 @@ export class CommentsComponent implements OnInit {
 
   updateComment(updateId: string, updatedComment: string){
     updatedComment = this.updateContent
-    this.projectsService.updateComment(updateId, updatedComment).subscribe()
+    this.projectsService.updateComment(updateId, updatedComment).subscribe(
+      (res) => this.getComments(this.projectId)
+    )
   }
 }

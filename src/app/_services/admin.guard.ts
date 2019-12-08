@@ -16,7 +16,7 @@ export class AdminGuard implements CanActivate {
         if (admin === 'admin') {
           return true
         } else {
-          window.location.href = '/home'
+          window.location.href = '/login'
           alert('Not Authorized')
           return false
         }

@@ -9,7 +9,7 @@
         <ul *ngFor='let comment of comments'>
             <li>{{comment.commenter_username }}: {{ comment.content }} 
                 <button mat-raised-button class="button" (click)='[deleteComment(comment.id), getComments(projectId)]'>Delete</button>
-                <button mat-raised-button class='button' (click)='setUpdateValue(comment.content, comment.id)'>Edit</button>
+                <button mat-raised-button class='button' (click)='[setUpdateValue(comment.content, comment.id), getComments(projectId)]'>Edit</button>
             </li>
             
         </ul>
@@ -19,7 +19,7 @@
         <input type='text' class="input" placeholder='Comment' [(ngModel)]='newComment'>
         <button mat-raised-button class='button' (click)='[addComment(newComment, projectId), getComments(projectId)]'>Add a comment</button>
 
-        <button mat-raised-button class='button' (click)='getComments(projectId)'>View Comments</button>
+        <!-- <button mat-raised-button class='button' (click)='getComments(projectId)'>View Comments</button> -->
     
 
     
